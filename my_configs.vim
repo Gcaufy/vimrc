@@ -73,3 +73,35 @@ map <c-p> :CtrlP<cr>
 map <leader>b :CtrlPBuffer<cr>
 
 nmap <silent> <C-l> <Plug>(jsdoc)
+
+
+
+
+" Fzf Settings
+set rtp+=~/.fzf
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_buffers_jump = 1
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-l> <plug>(fzf-complete-buffer-line)
+
+"command! -nargs=? -bang -complete=dir FzfFiles
+"  \ call fzf#vim#files(<q-args>, <bang>0 ? fzf#vim#with_preview('up:60%') : {}, <bang>0)
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%', '?'),
+  \                 <bang>0)
+command FzfChanges call s:fzf_changes()
+command! -nargs=? -bang -complete=dir FzfFiles
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:60%'), <bang>0)
+
+nnoremap <silent> <leader>n :FzfFiles<CR>
+nnoremap <silent> <leader>N :FzfFiles!<CR>
+nnoremap <silent> <leader>` :FzfMarks<CR>
+nnoremap <silent> <leader>l :FzfBLines<CR>
+
+
