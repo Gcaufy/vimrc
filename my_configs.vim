@@ -28,10 +28,22 @@ set statusline+=%*
 "autocmd FileType html,css EmmetInstall
 "let g:user_emmet_expandabbr_key='<Tab>'
 "imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+"
 
+
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 let g:neocomplcache_enable_at_startup = 0
-
 
 if &term =~ "xterm"
   "256 color --
@@ -46,6 +58,8 @@ if &term =~ "xterm"
     let &t_Sb="\ESC[4%dm"
   endif
 endif
+
+
 
 nnoremap <C-f> <PageUp>
 nnoremap <C-b> <PageDown>
