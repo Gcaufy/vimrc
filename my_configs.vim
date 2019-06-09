@@ -95,7 +95,6 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%', '?'),
   \                 <bang>0)
-command FzfChanges call s:fzf_changes()
 command! -nargs=? -bang -complete=dir FzfFiles
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:60%'), <bang>0)
 
