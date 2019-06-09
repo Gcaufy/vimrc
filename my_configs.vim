@@ -99,7 +99,8 @@ command FzfChanges call s:fzf_changes()
 command! -nargs=? -bang -complete=dir FzfFiles
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:60%'), <bang>0)
 
-nnoremap <silent> <leader>n :FzfFiles<CR>
+nnoremap <silent> <leader>j :FzfFiles<CR>
+nnoremap <silent> <leader>J :Ag<CR>
 nnoremap <silent> <leader>N :FzfFiles!<CR>
 nnoremap <silent> <leader>` :FzfMarks<CR>
 nnoremap <silent> <leader>l :FzfBLines<CR>
