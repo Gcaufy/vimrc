@@ -66,6 +66,8 @@ nnoremap <C-b> <PageDown>
 
 vmap <leader>c "+y<cr>
 
+nnoremap <leader>cf :%y+<cr>
+
 let g:ctrlp_map = '<c-p>'
 map <leader><leader> :b#<cr>
 map <leader>new :edit ~/mine/vim/temp/
@@ -98,10 +100,12 @@ command! -bang -nargs=* Ag
 command! -nargs=? -bang -complete=dir FzfFiles
   \ call fzf#vim#files(<q-args>, fzf#vim#with_preview('right:60%'), <bang>0)
 
+nnoremap <silent> <leader>f :FzfHistory<CR>
 nnoremap <silent> <leader>j :FzfFiles<CR>
 nnoremap <silent> <leader>J :Ag<CR>
 nnoremap <silent> <leader>N :FzfFiles!<CR>
 nnoremap <silent> <leader>` :FzfMarks<CR>
 nnoremap <silent> <leader>l :FzfBLines<CR>
+nnoremap <silent> <leader>git :!tig<CR>
 
 
