@@ -17,9 +17,10 @@ let NERDTreeQuitOnOpen=1
 let g:javascript_plugin_jsdoc = 1
 
 "disable syntastic auto check
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'disable',
                             \ 'active_filetypes': ['javascript'],
-                            \ 'passive_filetypes': ['html'] }
+                            \ 'passive_filetypes': ['html', 'vue'] }
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
